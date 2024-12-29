@@ -47,7 +47,8 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/resume.github.io/"
             },
             "development": {
               "optimization": false,
