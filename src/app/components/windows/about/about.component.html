@@ -1,0 +1,70 @@
+<div class="about__menu cursor_pointer cursor_pointer">
+  <div class="about__menu__vectors cursor_pointer">
+    <div class="font-size-container cursor_pointer">
+      <button class="btn-decrease cursor_pointer" (click)="adjustFontSize(-1)">
+        -
+      </button>
+      <input
+        class="about__menu__inp cursor_pointer"
+        [value]="fontSize()"
+        readonly
+      />
+      <button class="btn-increase cursor_pointer" (click)="adjustFontSize(1)">
+        +
+      </button>
+    </div>
+
+    @for (item of menu; track item.title) {
+    <button
+      class="about__menu__btn cursor_pointer"
+      [ngClass]="item.class"
+      (click)="item.data.set(!item.data())"
+    >
+      {{ item.title }}
+    </button>
+    } @for (item of alight; track item.title) {
+    <button
+      (click)="textAlight.set(item.data)"
+      class="about__menu__btn cursor_pointer"
+      [ngStyle]="{ 'text-align': item.data, padding: '3px' }"
+    >
+      {{ item.title }}
+    </button>
+
+    }
+  </div>
+</div>
+<div
+  class="about__content"
+  [ngStyle]="{ 'font-size': fontSize() + 'px', 'text-align': textAlight() }"
+>
+  <h2 [ngClass]="{ bold: bold() }">
+    Привет! Меня зовут Кирилл, мне 17 лет (скоро
+    <span [ngClass]="{ line: line() }">18</span>)
+  </h2>
+  <p>
+    С детства увлекаюсь программированием — мои первые проекты создавались в
+    <span [ngClass]="{ not: not() }">Scratch</span>, что помогло мне развить
+    <span [ngClass]="{ bold: bold() }">навык решения сложных задач.</span> Позже
+    я пробовал себя в <span [ngClass]="{ not: not() }">React</span>, а затем, по
+    совету старшего товарища, открыл для себя
+    <span [ngClass]="{ bold: bold() }">Angular</span> — и сразу
+    <span [ngClass]="{ line: line() }">влюбился</span> в этот фреймворк!
+  </p>
+  <p>
+    Для более глубокого понимания полного цикла разработки я изучал
+    <span [ngClass]="{ bold: bold() }">основы backend.</span> Сейчас активно
+    совершенствую навыки написания
+    <span [ngClass]="{ curs: curs() }">чистого кода,</span> изучаю
+    <span [ngClass]="{ curs: curs() }">алгоритмы</span> и лучшие практики
+    разработки. Мне нравится разбираться в сложных задачах и находить для них
+    <span [ngClass]="{ curs: curs() }">оптимальные решения,</span> а также
+    постоянно узнавать что-то новое.
+  </p>
+  <p>
+    Ищу команду, где смогу расти как разработчик, работать над
+    <span [ngClass]="{ bold: bold() }">интересными проектами</span> и делиться
+    своим энтузиазмом с коллегами!
+  </p>
+  <style></style>
+</div>

@@ -1,0 +1,17 @@
+@if(!dataService.hiddenStartMenu()){
+<div class="start-menu">
+  @for (icon of dataService.icons(); track icon.id) {
+  <icons
+    (click)="dataService.openWindow(icon.windowId, true)"
+    class="icons"
+    [icon]="icon"
+  ></icons>
+  } @for (icon of dataService.orderIcons(); track icon.id) {
+  <icons
+    (click)="dataService.openWindow(icon.windowId, true)"
+    class="icons"
+    [icon]="icon"
+  ></icons>
+  }
+</div>
+}

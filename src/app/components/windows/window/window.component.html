@@ -1,0 +1,50 @@
+<div
+  class="window"
+  [ngClass]="{
+    maximized: window.isMaximized,
+    active: window.isActive,
+    hidden: window.hidden
+  }"
+  [ngStyle]="{
+    width: window.width,
+    height: window.height,
+    top: window.position.top + 'px',
+    left: window.position.left + 'px'
+  }"
+  (click)="setFocus(window)"
+>
+  <div class="window-header cursor_pointer">
+    <div class="window-header-drag" (mousedown)="startDrag($event)">
+      <span>{{ window.title }}</span>
+    </div>
+    <div class="controls cursor_pointer">
+      <div
+        class="control collapse"
+        (click)="dataService.showWindow(window.id, window.hidden)"
+      >
+        <svg class="close svg32 cursor_pointer" icon="collapse"></svg>
+      </div>
+      <div
+        class="control"
+        (click)="dataService.maximizeWindow(window.id, window.isMaximized)"
+      >
+        <svg
+          class="svg32 cursor_pointer"
+          [icon]="window.isMaximized ? 'expand_down' : 'expand'"
+        ></svg>
+      </div>
+      <div
+        class="control close"
+        (click)="dataService.openWindow(window.id, false)"
+      >
+        <svg class="svg32 cursor_pointer" icon="close"></svg>
+      </div>
+    </div>
+  </div>
+  <div class="window-content">
+    <ng-container #dynamicContent></ng-container>
+  </div>
+</div>
+@if(showFullscreenIndicator){
+<div class="showFullscreen"></div>
+}

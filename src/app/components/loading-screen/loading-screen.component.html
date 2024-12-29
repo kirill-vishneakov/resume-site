@@ -1,0 +1,20 @@
+@if(systemOn()){
+<div class="loading-container">
+  <div class="logo">OS Vishenka</div>
+  <div class="loading-text">
+    <p>{{ currentLine }}<span class="cursor">|</span></p>
+  </div>
+  <div class="progress-bar">
+    <div class="progress" [style.width.%]="progress"></div>
+  </div>
+</div>
+} @else {
+<div class="loading-container">
+  <div class="logo">OS Vishenka</div>
+  <div class="power-button-container">
+    <button class="power-button cursor_pointer" (click)="powerOn()">
+      Power On
+    </button>
+  </div>
+</div>
+}

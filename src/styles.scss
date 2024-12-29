@@ -1,0 +1,49 @@
+@import url(./reset.scss);
+
+:root {
+  // --background-color: #47595d;1e1e1e
+  --background-color: #1e1e1e;
+  --background-footer-color: #1a2325;
+  --base-color: white;
+}
+
+html,
+body {
+  background-color: var(--background-color);
+  transition: background-color 0.5s ease-in-out;
+  color: var(--base-color);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+* {
+  transition: background-color 0.5s ease-in-out;
+}
+
+.cursor_pointer {
+  cursor: url(/assets/imgs/orig.png), pointer;
+}
+
+.svg16 {
+  width: 16px;
+  height: 16px;
+  align-items: center;
+}
+
+.svg32 {
+  width: 32px;
+  height: 32px;
+  align-items: center;
+}
+
+.theme {
+  transition: background-color 0.5s ease-in-out;
+}
+
+.theme-color {
+  transition: color 0.5s ease-in-out;
+}
