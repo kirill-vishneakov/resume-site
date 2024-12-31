@@ -3,7 +3,6 @@ import { LoadingScreenComponent } from './components/loading-screen/loading-scre
 import { DesktopComponent } from './components/desktop/desktop.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/loading', pathMatch: 'full' },
-  { path: 'loading', component: LoadingScreenComponent },
+  { path: '', component: LoadingScreenComponent },
   { path: 'desktop', component: DesktopComponent },
 ];
