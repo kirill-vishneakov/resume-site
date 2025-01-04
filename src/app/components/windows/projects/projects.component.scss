@@ -50,12 +50,22 @@
 	position: absolute;
 	left: 35%;
 	font-size: 22px;
+	padding: 10px;
+}
+
+.projects-content-header {
+	font-size: 34px;
+	text-align: center;
+	font-weight: 800;
+}
+.projects-content-description {
+	padding-left: 20px;
+	font-size: 28px;
 }
 
 .project-content-stack {
 	display: flex;
-}
-
-.project-content-skill {
-	font-size: 18px;
+	align-items: end;
+	flex-wrap: wrap;
+	font-size: 22px;
 }

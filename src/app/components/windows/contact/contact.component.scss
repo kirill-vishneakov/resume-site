@@ -1,0 +1,13 @@
+:host {
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+}
+
+.contact-header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.contact-about-img {
+	width: 10%;
+}

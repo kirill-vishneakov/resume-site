@@ -1,25 +1,42 @@
 <div class="project-container">
-	<div class="projects-menu" #menu>
+	<div class="projects-menu">
 		@for (project of projectsMenu; track project.id) {
-		<button
-			class="projects-menu_btn cursor_pointer"
-			(click)="activeProject.set(project.id)">
-			<p class="project-description-h">{{ project.title }}</p>
-			<span class="project-description-text">{{ project.subtitle }}</span>
-		</button>
+		<div>
+			<button
+				class="projects-menu_btn cursor_pointer"
+				(click)="activeProject.set(project.id)">
+				<p class="project-description-h">{{ project.title }}</p>
+				<span class="project-description-text">{{ project.subtitle }}</span>
+			</button>
+		</div>
 		}
 	</div>
+
+	@if (project(); as project) {
 	<div class="project-content">
-		@for (project of projectsMenu; track project.id) { @if(activeProject() ===
-		project.id){
-		<h2>{{ project.title }}</h2>
-		<p>{{ project.description }}</p>
-		<div class="project-content-stack">
-			@for (skill of project.stack; track skill) {
-			<p class="project-content-skill">{{ skill }}</p>
-			}
+		<div>
+			<h2 class="projects-content-header">{{ project.title }}</h2>
+			<p>
+				<span class="projects-content-description">Описание: </span
+				>{{ project.description }}
+			</p>
 		</div>
-		<p>{{ project.period }}</p>
-		} }
+		<br />
+		@if(project.id !== lastId){
+		<div>
+			<p class="project-content-stack">
+				<span class="projects-content-description">Стек:</span> @for (skill of
+				project.stack; track skill) {
+
+				<span class="project-content-skill">&nbsp;{{ skill }}</span>
+				}
+			</p>
+			<p>
+				<span class="projects-content-description">Дата:</span>
+				{{ project.period }}
+			</p>
+		</div>
+		}
 	</div>
+	}
 </div>

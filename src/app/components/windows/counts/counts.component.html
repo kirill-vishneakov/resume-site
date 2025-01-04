@@ -1,4 +1,7 @@
-<h2 class="count">Количество: {{ countsService.count() }}</h2>
+<h2 class="count">
+	{{ countsService.count() }} Человек из
+	{{ countsService.groups().length }} Групп
+</h2>
 <div class="counts-search">
 	<input
 		class="counts-input"
