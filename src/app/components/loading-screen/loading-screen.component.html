@@ -1,23 +1,23 @@
 @if(systemOn()){
 <div class="loading-container">
-  <div class="logo">Подождите пока система запуститься:</div>
-  <div class="loading-text">
-    <p>{{ currentLine }}<span class="cursor">|</span></p>
-  </div>
-  <div class="progress-bar">
-    <div class="progress" [style.width.%]="progress"></div>
-  </div>
+	<div class="logo">Подождите пока система запуститься:</div>
+	<div class="loading-text">
+		<p>{{ currentLine }}<span class="cursor">|</span></p>
+	</div>
+	<div class="progress-bar">
+		<div class="progress" [style.width.%]="progress"></div>
+	</div>
 </div>
 } @else {
 <div class="loading-container">
-  <div class="logo">
-    Сайт резюме Frontend-разработчика <br />
-    Вишняков Кирилла
-  </div>
-  <div class="power-button-container">
-    <button class="power-button cursor_pointer" (click)="powerOn()">
-      <img src="assets/imgs/on.png" alt="" />
-    </button>
-  </div>
+	<div class="logo">
+		Сайт резюме Frontend-разработчика <br />
+		Вишняков Кирилла
+	</div>
+	<div class="power-button-container">
+		<button class="power-button cursor_pointer" (click)="powerOn()">
+			<img src="assets/imgs/on.png" alt="" />
+		</button>
+	</div>
 </div>
 }

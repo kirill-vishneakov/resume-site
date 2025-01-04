@@ -1,19 +1,18 @@
 <div (click)="dataService.hiddenStartMenu.set(true)">
-  @for (icon of dataService.icons(); track icon.id) {
-  <icons
-    class="icons theme-color"
-    [ngStyle]="{
-      top: icon.position.top + 'dvh',
-      left: icon.position.left + 'dvw'
-    }"
-    [icon]="icon"
-  ></icons>
-  } @for (window of dataService.windows(); track window.id) {
-  @if(window.isOpen){
-  <window [window]="window"></window>
-  } } @if(!dataService.hiddenStartMenu()){
-  <start-menu></start-menu>
-  }
+	@for (icon of dataService.icons(); track icon.id) {
+	<icons
+		class="icons theme-color"
+		[ngStyle]="{
+			top: icon.position.top + 'dvh',
+			left: icon.position.left + 'dvw'
+		}"
+		[icon]="icon"></icons>
+	} @for (window of dataService.windows(); track window.id) {
+	@if(window.isOpen){
+	<window [window]="window"></window>
+	} } @if(!dataService.hiddenStartMenu()){
+	<start-menu></start-menu>
+	}
 </div>
 
 <taskbar class="theme"></taskbar>

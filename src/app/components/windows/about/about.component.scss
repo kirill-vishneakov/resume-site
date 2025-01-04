@@ -1,95 +1,95 @@
 :host {
-  display: grid;
-  grid-template-rows: min-content 1fr;
-  gap: 8px;
-  position: relative;
+	display: grid;
+	grid-template-rows: min-content 1fr;
+	gap: 8px;
+	position: relative;
 }
 
 .about__menu {
-  display: grid;
-  border-bottom: 1px solid var(--base-color);
-  grid-template-rows: min-content 1fr;
-  gap: 10px;
-  width: 100%;
-  overflow: hidden;
+	display: grid;
+	border-bottom: 1px solid var(--base-color);
+	grid-template-rows: min-content 1fr;
+	gap: 10px;
+	width: 100%;
+	overflow: hidden;
 }
 
 .about__menu__vectors {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 5px;
 }
 
 .font-size-container {
-  border: 2px solid var(--base-color);
-  border-radius: 5px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: space-between;
-  width: 60%;
+	border: 2px solid var(--base-color);
+	border-radius: 5px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	justify-content: space-between;
+	width: 60%;
 }
 
 .about__menu__btn {
-  width: 35%;
-  height: 100%;
-  margin: 5px;
-  text-align: center;
-  font-size: 16px;
-  border: 2px solid var(--base-color);
-  border-radius: 5px;
-  transition: width 0.5s ease;
-  text-decoration: none;
+	width: 35%;
+	height: 100%;
+	margin: 5px;
+	text-align: center;
+	font-size: 16px;
+	border: 2px solid var(--base-color);
+	border-radius: 5px;
+	transition: width 0.5s ease;
+	text-decoration: none;
 }
 
 .about__menu__btn:hover {
-  width: 50%;
+	width: 50%;
 }
 
 .about__menu__inp {
-  width: 25%;
-  height: 100%;
-  text-align: center;
+	width: 25%;
+	height: 100%;
+	text-align: center;
 }
 
 .btn-decrease,
 .btn-increase {
-  font-size: 18px;
-  padding: 4px 10px;
-  border-radius: 5px;
-  color: var(--base-color);
-  transition: background-color 0.3s;
-  display: flex;
-  align-items: center;
+	font-size: 18px;
+	padding: 4px 10px;
+	border-radius: 5px;
+	color: var(--base-color);
+	transition: background-color 0.3s;
+	display: flex;
+	align-items: center;
 }
 
 .btn-decrease {
-  background-color: #ff6347;
+	background-color: #ff6347;
 }
 
 .btn-decrease:hover {
-  background-color: #cc4d37;
+	background-color: #cc4d37;
 }
 
 .btn-increase {
-  background-color: #007bff;
+	background-color: #007bff;
 }
 
 .btn-increase:hover {
-  background-color: #0056b3;
+	background-color: #0056b3;
 }
 
 .bold {
-  font-weight: 800;
+	font-weight: 800;
 }
 .not {
-  text-decoration: line-through;
+	text-decoration: line-through;
 }
 .curs {
-  font-style: italic;
+	font-style: italic;
 }
 .line {
-  text-decoration: underline;
+	text-decoration: underline;
 }
