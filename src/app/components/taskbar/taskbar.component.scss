@@ -26,11 +26,11 @@
 
 .taskbar-item:hover {
   transform: scale(1.1);
-  background: #666;
+  background: var(--hover-color);
 }
 
 .taskbar-item.active {
-  background: #0078d7;
+  background: var(--second-color);
 }
 
 .taskbar-icon {

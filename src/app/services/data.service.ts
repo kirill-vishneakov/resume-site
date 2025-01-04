@@ -3,7 +3,8 @@ import { AboutComponent } from '../components/windows/about/about.component';
 import { SkillsComponent } from '../components/windows/skills/skills.component';
 import { ProjectsComponent } from '../components/windows/projects/projects.component';
 import { ContactComponent } from '../components/windows/contact/contact.component';
-import { VectorsComponent } from '../components/windows/vectors/vectors.component';
+import { CountsComponent } from '../components/windows/counts/counts.component';
+import { MinesweeperComponent } from '../components/windows/minesweeper/minesweeper.component';
 
 export interface Icon {
   id: number;
@@ -36,28 +37,28 @@ export class DataService {
     {
       id: 1,
       title: 'Обо мне',
-      image: 'assets/svg/about.svg',
+      image: 'assets/imgs/about.png',
       windowId: 'aboutWindow',
       position: { top: 50, left: 50 },
     },
     {
       id: 2,
       title: 'Навыки',
-      image: 'assets/svg/skills.svg',
+      image: 'assets/imgs/skills.png',
       windowId: 'skillsWindow',
       position: { top: 10, left: 55 },
     },
     {
       id: 3,
       title: 'Проекты',
-      image: 'assets/svg/projects.svg',
+      image: 'assets/imgs/projects.png',
       windowId: 'projectsWindow',
       position: { top: 20, left: 10 },
     },
     {
       id: 4,
       title: 'Связаться',
-      image: 'assets/svg/contact.svg',
+      image: 'assets/imgs/contact.png',
       windowId: 'contactWindow',
       position: { top: 70, left: 70 },
     },
@@ -67,15 +68,15 @@ export class DataService {
     {
       id: 1,
       title: 'Сапер',
-      image: 'assets/svg/minesweeper.svg',
+      image: 'assets/imgs/minesweeper.png',
       windowId: 'minesweeperWindow',
       position: { top: 50, left: 50 },
     },
     {
       id: 2,
-      title: 'Промежутки',
-      image: 'assets/svg/vector.svg',
-      windowId: 'vectorsWindow',
+      title: 'Счетчик',
+      image: 'assets/imgs/counts.png',
+      windowId: 'countsComponent',
       position: { top: 50, left: 50 },
     },
   ]);
@@ -92,7 +93,7 @@ export class DataService {
       isMaximized: false,
       isActive: false,
       hidden: false,
-      icon: 'assets/svg/about.svg',
+      icon: 'assets/imgs/about.png',
       isSecond: false,
     },
     {
@@ -100,13 +101,13 @@ export class DataService {
       title: 'Навыки',
       isOpen: false,
       component: SkillsComponent,
-      width: '700px',
+      width: '800px',
       height: '500px',
       position: { top: 100, left: 100 },
       isMaximized: false,
       isActive: false,
       hidden: false,
-      icon: 'assets/svg/skills.svg',
+      icon: 'assets/imgs/skills.png',
       isSecond: false,
     },
     {
@@ -120,7 +121,7 @@ export class DataService {
       isMaximized: false,
       isActive: false,
       hidden: false,
-      icon: 'assets/svg/projects.svg',
+      icon: 'assets/imgs/projects.png',
       isSecond: false,
     },
     {
@@ -134,43 +135,42 @@ export class DataService {
       isMaximized: false,
       isActive: false,
       hidden: false,
-      icon: 'assets/svg/contact.svg',
+      icon: 'assets/imgs/contact.png',
       isSecond: false,
     },
     {
       id: 'minesweeperWindow',
-      title: 'Связаться',
+      title: 'Сапер',
       isOpen: false,
-      component: VectorsComponent,
+      component: MinesweeperComponent,
       width: '500px',
       height: '400px',
       position: { top: 200, left: 200 },
       isMaximized: false,
       isActive: false,
       hidden: false,
-      icon: 'assets/svg/minesweeper.svg',
+      icon: 'assets/imgs/minesweeper.png',
       isSecond: true,
     },
     {
-      id: 'vectorsWindow',
-      title: 'Вектора',
+      id: 'countsComponent',
+      title: 'Счетчик',
       isOpen: false,
-      component: VectorsComponent,
+      component: CountsComponent,
       width: '500px',
       height: '400px',
       position: { top: 200, left: 200 },
       isMaximized: false,
       isActive: false,
       hidden: false,
-      icon: 'assets/svg/vector.svg',
+      icon: 'assets/imgs/counts.png',
       isSecond: true,
     },
   ]);
 
-  renderWindow = computed(() => {
-    console.log(this.windows());
-    return this.windows().filter((el) => el.isOpen || !el.isSecond);
-  });
+  renderWindow = computed(() =>
+    this.windows().filter((el) => el.isOpen || !el.isSecond)
+  );
 
   hiddenStartMenu = signal(true);
 

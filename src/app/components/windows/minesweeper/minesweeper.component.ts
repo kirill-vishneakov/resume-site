@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-vectors',
+  selector: 'app-minesweeper',
   standalone: true,
   imports: [],
-  templateUrl: './vectors.component.html',
-  styleUrl: './vectors.component.scss',
+  templateUrl: './minesweeper.component.html',
+  styleUrl: './minesweeper.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VectorsComponent {
+export class MinesweeperComponent {
 
 }

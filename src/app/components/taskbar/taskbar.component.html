@@ -26,9 +26,7 @@
 
   <div class="desktop__footer__theme-toggle">
     <svg
-      (mouseenter)="themeService.changeBackgroundColor('notSelected')"
-      (mouseleave)="themeService.changeBackgroundColor('selected')"
-      (click)="themeService.setTheme()"
+      (click)="themeService.changeTheme()"
       xmlns="http://www.w3.org/2000/svg"
       xml:space="preserve"
       width="32"

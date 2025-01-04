@@ -1,45 +1,85 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal } from '@angular/core'
+
+export interface Theme {
+	'--background-color': string
+	'--background-footer-color': string
+	'--base-color': string
+	'--hover-color': string
+	'--second-color': string
+}
+
+export interface ThemesList {
+	dark: Theme
+	light: Theme
+	[key: string]: Theme
+}
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: 'root',
 })
 export class ThemeService {
-  theme = signal({
-    selected: {
-      '--background-color': '#1e1e1e',
-      '--background-footer-color': '#1a2325',
-      '--base-color': 'white',
-    },
-    notSelected: {
-      '--background-color': '#89aaaf',
-      '--background-footer-color': '#4f6b71',
-      '--base-color': 'black',
-    },
-  });
+	constructor() {
+		this.setTheme()
+	}
 
-  changeBackgroundColor(state: 'selected' | 'notSelected') {
-    const themeVariables: Record<
-      '--background-color' | '--background-footer-color' | '--base-color',
-      string
-    > = this.theme()[state];
+	darkTheme = {
+		'--background-color': '#1e1e1e',
+		'--background-footer-color': '#1a2325',
+		'--base-color': 'white',
+		'--hover-color': '#6a6a6a',
+		'--second-color': '#31677d',
+	}
 
-    Object.keys(themeVariables).forEach((variable) => {
-      document.documentElement.style.setProperty(
-        variable,
-        themeVariables[
-          variable as
-            | '--background-color'
-            | '--background-footer-color'
-            | '--base-color'
-        ]
-      );
-    });
-  }
+	lightTheme = {
+		'--background-color': '#e6f4ea',
+		'--background-footer-color': '#b2f1ff',
+		'--base-color': 'black',
+		'--hover-color': '#b2d0ff',
+		'--second-color': '#ffe045',
+	}
 
-  setTheme() {
-    this.theme.set({
-      selected: this.theme().notSelected,
-      notSelected: this.theme().selected,
-    });
-  }
+	greenTheme = {
+		'--background-color': '#b9e7ee',
+		'--background-footer-color': '#a0ccbc',
+		'--base-color': '#2e7d32',
+		'--hover-color': '#66bb6a',
+		'--second-color': '#63d2fd',
+	}
+	themes = signal<ThemesList>({
+		dark: this.darkTheme,
+		light: this.lightTheme,
+		green: this.greenTheme,
+	})
+
+	currentTheme = signal<keyof ThemesList>(
+		(() => {
+			const theme = localStorage.getItem('theme') as keyof ThemesList | null
+			return theme && theme in this.themes() ? theme : 'dark'
+		})()
+	)
+
+	changeTheme() {
+		const themeKeys = Object.keys(this.themes()) as Array<keyof ThemesList>
+		const currentIndex = themeKeys.indexOf(this.currentTheme())
+
+		const nextIndex = (currentIndex + 1) % themeKeys.length
+		const nextTheme = themeKeys[nextIndex]
+
+		this.currentTheme.set(nextTheme)
+		localStorage.setItem('theme', nextTheme.toString())
+		this.setTheme()
+	}
+
+	setTheme() {
+		const themeVariables = this.themes()[this.currentTheme()]
+		Object.entries(themeVariables).forEach(([variable, value]) => {
+			document.documentElement.style.setProperty(variable, value)
+		})
+	}
+
+	addTheme(theme: Theme) {}
+
+	removeTheme(themeId: number) {}
+
+	editTheme(themeId: number) {}
 }

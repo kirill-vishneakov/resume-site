@@ -1,0 +1,68 @@
+<h2 class="count">Количество: {{ countsService.count() }}</h2>
+<div class="counts-search">
+	<input
+		class="counts-input"
+		type="text"
+		[(ngModel)]="countsService.searchText" />
+</div>
+
+<div class="groups">
+	@for (group of countsService.searchGroups(); track group.title) {
+	<div class="group">
+		<span class="counts-input"> {{ group.title }} </span>
+		<span class="counts-input"> {{ group.count }} </span>
+		<button
+			(click)="countsService.editing(group)"
+			class="counts-add-btn counts-btn cursor_pointer">
+			Изменить
+		</button>
+		<button
+			(click)="countsService.remove(group.title)"
+			class="counts-add-btn counts-btn cursor_pointer">
+			Удалить
+		</button>
+	</div>
+	}
+</div>
+
+@if(countsService.state() === 'create'){
+<div class="counts-add">
+	<div class="counts-add-inp">
+		<input
+			id="firstAdd"
+			class="counts-input"
+			type="text"
+			placeholder="Номер"
+			[(ngModel)]="title" />
+		<input
+			class="counts-input"
+			type="number"
+			placeholder="Количество"
+			[(ngModel)]="count"
+			(keydown.enter)="add()" />
+	</div>
+	<button (click)="add()" class="counts-add-btn counts-btn cursor_pointer">
+		Создать
+	</button>
+</div>
+} @else {
+<div class="counts-add">
+	<div class="counts-add-inp">
+		<input
+			class="counts-input"
+			type="text"
+			placeholder="Номер"
+			[(ngModel)]="countsService.editGroup()!.title" />
+		<input
+			class="counts-input"
+			type="number"
+			placeholder="Количество"
+			[(ngModel)]="countsService.editGroup()!.count" />
+	</div>
+	<button
+		(click)="this.countsService.edit()"
+		class="counts-add-btn counts-btn cursor_pointer">
+		Изменено
+	</button>
+</div>
+}

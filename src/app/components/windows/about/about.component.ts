@@ -46,7 +46,7 @@ export class AboutComponent {
   fontSize = signal(18);
   adjustFontSize(change: number) {
     const newSize = this.fontSize() + change;
-    const max = this.me?.isMaximized ? 40 : 26;
+    const max = 26;
     if (max === 26 && newSize > 26) return this.fontSize.set(26);
     if (newSize >= 14 && newSize <= max) {
       this.fontSize.set(newSize);

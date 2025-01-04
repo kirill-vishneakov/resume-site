@@ -1,0 +1,61 @@
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  overflow: hidden;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.projects-menu {
+  border-right: 1px solid #ddd;
+  padding: 10px;
+}
+
+.projects-menu_btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.projects-menu_btn:hover {
+  background-color: var(--hover-color);
+}
+
+.project-description {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.project-description-h {
+  margin-top: 0;
+  font-size: 24px;
+  color: var(--base-color);
+}
+
+.project-description-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--base-color);
+}
+
+.project-content {
+  position: absolute;
+  left: 35%;
+  font-size: 22px;
+}
+
+.project-content-stack {
+  display: flex;
+}
+
+.project-content-skill {
+  font-size: 18px;
+}

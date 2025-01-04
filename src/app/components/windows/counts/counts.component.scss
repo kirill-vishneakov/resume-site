@@ -1,0 +1,81 @@
+:host {
+	height: 100%;
+	display: grid;
+	grid-template-rows: 1fr 1fr 5fr 1fr;
+}
+
+.count {
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+.counts-search {
+	margin-bottom: 20px;
+	display: grid;
+}
+
+.groups {
+	overflow-y: scroll;
+	scrollbar-width: none;
+}
+
+.group {
+	display: grid;
+	grid-template-columns: 2fr 2fr 1fr 1fr;
+	margin-bottom: 20px;
+	gap: 10px;
+}
+
+.counts-group {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+	margin-right: 10px;
+}
+
+.counts-add-inp {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+.counts-btn {
+	display: flex;
+	background-color: var(--second-color);
+	padding: 10px;
+	transition: background-color 0.3s ease;
+	width: 80%;
+	margin-left: 10%;
+	justify-content: center;
+}
+
+.counts-btns {
+	background-color: var(--second-color);
+	padding: 5px;
+	transition: background-color 0.3s ease;
+}
+
+.counts-btn:hover {
+	background: var(--hover-color);
+}
+
+.counts-input {
+	display: flex;
+	justify-content: center;
+	border: 2px var(--base-color) solid;
+	padding: 10px;
+	align-items: center;
+	width: 100%;
+}
+
+.counts-add-btn {
+	border-radius: 10px;
+	transition: transform 0.3s ease-in-out;
+	margin-bottom: 10px;
+}
+
+.counts-add-btn:hover {
+	transform: scale(1.1);
+}

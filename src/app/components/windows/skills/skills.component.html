@@ -1,1 +1,10 @@
-<p>skills works!</p>
+<div class="skills-header">
+  <h2 class="skills-header__title">А где же они?</h2>
+  <p>P.S. Поводи курсором 😁</p>
+</div>
+
+<div class="skills">
+  @for (skill of skills; track skill) {
+  <button class="skill-btn">{{ skill }}</button>
+  }
+</div>

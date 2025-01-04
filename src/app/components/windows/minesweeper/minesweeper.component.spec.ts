@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VectorsComponent } from './vectors.component';
+import { MinesweeperComponent } from './minesweeper.component';
 
-describe('VectorsComponent', () => {
-  let component: VectorsComponent;
-  let fixture: ComponentFixture<VectorsComponent>;
+describe('MinesweeperComponent', () => {
+  let component: MinesweeperComponent;
+  let fixture: ComponentFixture<MinesweeperComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VectorsComponent]
+      imports: [MinesweeperComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VectorsComponent);
+    fixture = TestBed.createComponent(MinesweeperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
