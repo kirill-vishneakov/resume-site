@@ -25,6 +25,7 @@ export class MinesweeperService {
 	// easy - size <= 10 - size
 	// middle - 6 <= size <= 10 - size**2 / 5
 	// hard - 10 <= size size**2 / 4
+	// test commits
 
 	createSquare(size: number, countMines: number): number[][] {
 		let arr = []
@@ -42,7 +43,7 @@ export class MinesweeperService {
 	}
 
 	outBounds(x: number, y: number, size: number): boolean {
-		return (x < 0) || (y < 0) || (x >= size) || (y >= size)
+		return x < 0 || y < 0 || x >= size || y >= size
 	}
 
 	calcNear(x: number, y: number, mines: number[][], size: number): number {
