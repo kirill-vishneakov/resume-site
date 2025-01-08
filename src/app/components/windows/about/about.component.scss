@@ -2,16 +2,13 @@
 	display: grid;
 	grid-template-rows: min-content 1fr;
 	gap: 8px;
-	position: relative;
 }
-
 .about__menu {
 	display: grid;
 	border-bottom: 1px solid var(--base-color);
 	grid-template-rows: min-content 1fr;
 	gap: 10px;
 	width: 100%;
-	overflow: hidden;
 }
 
 .about__menu__vectors {
@@ -19,6 +16,11 @@
 	justify-content: space-between;
 	align-items: center;
 	gap: 5px;
+}
+
+.about__content {
+	overflow-y: scroll;
+	height: 300px;
 }
 
 .font-size-container {

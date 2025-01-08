@@ -1,13 +1,21 @@
 :host {
 	display: grid;
-	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: 1fr 1fr;
+	font-size: 40px;
 }
 
 .contact-header {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	border: 3px solid var(--base-color);
+	border-radius: 50%;
+	width: 70%;
 }
 
-.contact-about-img {
-	width: 10%;
+.contact-content {
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+	gap: 0;
+}
+
+.content__username {
+	font-size: 45px;
 }

@@ -9,8 +9,8 @@ import { MinesweeperComponent } from '../components/windows/minesweeper/mineswee
 export interface Icon {
 	id: number
 	title: string
-	image: string // путь к иконке
-	windowId: string // ID связанного окна
+	image: string
+	windowId: string
 	position: { top: number; left: number }
 }
 
@@ -129,8 +129,8 @@ export class DataService {
 			title: 'Связаться',
 			isOpen: false,
 			component: ContactComponent,
-			width: '500px',
-			height: '400px',
+			width: '800px',
+			height: '500px',
 			position: { top: 200, left: 200 },
 			isMaximized: false,
 			isActive: false,

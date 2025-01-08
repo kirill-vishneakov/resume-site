@@ -3,7 +3,6 @@
 	grid-template-columns: 1fr 2fr;
 	overflow: hidden;
 	height: 100%;
-	overflow-y: scroll;
 	scrollbar-width: none;
 }
 
@@ -47,10 +46,11 @@
 }
 
 .project-content {
-	position: absolute;
+	// position: absolute;
 	left: 35%;
 	font-size: 22px;
 	padding: 10px;
+	overflow-y: scroll;
 }
 
 .projects-content-header {
