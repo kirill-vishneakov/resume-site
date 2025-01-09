@@ -2,7 +2,7 @@
 <div class="mine_line">
 	@for (cube of line; track x; let x = $index) {
 	<button class="mine_cube" (click)="mineService.openCube(y, x)">
-		{{ cube }}
+		{{ !cube ? '' : cube }}
 	</button>
 	}
 </div>
