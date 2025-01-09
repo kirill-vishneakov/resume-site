@@ -130,7 +130,7 @@ export class DataService {
 			isOpen: false,
 			component: ContactComponent,
 			width: '800px',
-			height: '500px',
+			height: '600px',
 			position: { top: 200, left: 200 },
 			isMaximized: false,
 			isActive: false,

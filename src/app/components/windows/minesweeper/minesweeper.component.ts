@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { MinesweeperService } from '../../../services/minesweeper.service'
 
 @Component({
   selector: 'app-minesweeper',
@@ -9,5 +10,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MinesweeperComponent {
-
+  mineService = inject(MinesweeperService)
+  
 }

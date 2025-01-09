@@ -1,1 +1,11 @@
-<p>minesweeper works!</p>
+@for (line of mineService.openSquare();track y; let y = $index) {
+<div class="mine_line">
+	@for (cube of line; track x; let x = $index) {
+	<button class="mine_cube" (click)="mineService.openCube(y, x)">
+		{{ cube }}
+	</button>
+	}
+</div>
+}
+
+<button (click)="mineService.resetSquare()">Обновить</button>
