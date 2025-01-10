@@ -1,14 +1,20 @@
-.mine_cube {
-	display: flex;
-  align-items: center;
-	border: 1px solid var(--base-color);
-	width: 40px;
-	height: 40px;
-	padding: 10px;
-	margin: 5px;
+:host {
+	display: grid;
+	grid-template-columns: 1fr 120px;
 }
 
-.mine_line{
-  display: flex;
-  align-items: center;
+.mine_cube {
+	display: flex;
+	align-items: center;
+	border: 1px solid var(--base-color);
+	width: 60px;
+	height: 60px;
+	padding: 5px;
+	margin: 5px;
+	justify-content: center;
+}
+
+.mine_line {
+	display: flex;
+	align-items: center;
 }

@@ -144,7 +144,7 @@ export class DataService {
 			isOpen: false,
 			component: MinesweeperComponent,
 			width: '500px',
-			height: '400px',
+			height: '420px',
 			position: { top: 200, left: 200 },
 			isMaximized: false,
 			isActive: false,

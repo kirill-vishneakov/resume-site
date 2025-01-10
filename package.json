@@ -4,8 +4,7 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
-		"build": "ng build --configuration=production ",
-		"ngh": "ngh --dir dist/resume-site/browser",
+		"build": "ng build --configuration=production && ngh --dir dist/resume-site/browser",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test"
 	},

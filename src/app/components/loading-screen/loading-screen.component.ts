@@ -49,7 +49,7 @@ export class LoadingScreenComponent {
 
 		for (let i = 0; i < line.length; i++) {
 			let audio = new Audio(
-				`/assets/sounds/typing/${Math.floor(Math.random() * 3) + 1}.mp3`
+				`./assets/sounds/typing/${Math.floor(Math.random() * 3) + 1}.mp3`
 			)
 			this.currentLine += line[i]
 			this.typedChars++
@@ -68,7 +68,7 @@ export class LoadingScreenComponent {
 	}
 
 	onLoadingComplete() {
-		let audio = new Audio('/assets/sounds/startup.mp3')
+		let audio = new Audio('./assets/sounds/startup.mp3')
 		document.querySelector('.loading-container')?.classList.add('fade-out')
 		setTimeout(() => {
 			audio.play()

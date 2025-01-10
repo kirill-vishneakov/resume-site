@@ -1,11 +1,32 @@
-@for (line of mineService.openSquare();track y; let y = $index) {
-<div class="mine_line">
-	@for (cube of line; track x; let x = $index) {
-	<button class="mine_cube" (click)="mineService.openCube(y, x)">
-		{{ !cube ? '' : cube }}
-	</button>
+<div>
+	@for (line of mineService.openSquare();track y; let y = $index) {
+	<div class="mine_line">
+		@for (cube of line; track x; let x = $index) {
+		<button
+			class="mine_cube"
+			(click)="mineService.openCube(y, x)"
+			(contextmenu)="mineService.openCube(y, x, true)">
+			@switch (cube) { @case (-1){
+			<img src="assets/imgs/bomb.png" alt="mine" />
+			} @case (9){
+			<img src="assets/imgs/flag.png" alt="mine" />
+			} @case (0){ } @default {
+			{{ cube }}
+			} }
+		</button>
+		}
+	</div>
 	}
 </div>
-}
 
-<button (click)="mineService.resetSquare()">Обновить</button>
+<div>
+	<button (click)="mineService.resetSquare()">
+		<img src="assets/imgs/reset.png" alt="reset" />
+	</button>
+	<select>
+		<option value="easy">Легко</option>
+		<option value="medium">Нормик</option>
+		<option value="hard">Тяжко</option>
+	</select>
+	<input type="number" />
+</div>
